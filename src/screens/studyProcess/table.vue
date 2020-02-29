@@ -1,13 +1,13 @@
 <template>
-	<view>
+	<view class="table-container">
 		<view
 				class="table-row"
 				:key="index"
 				v-for="(item, index) in dataToShow">
-			<text>
+			<text class="subtitle">
 				{{item.label}}
 			</text>
-			<text>
+			<text  class="value">
 				{{item.value}}
 			</text>
 		</view>
@@ -32,9 +32,28 @@ export default {
 
 <style>
 
+	.table-container {
+		border-bottom-width: 1px;
+		border-style: solid;
+		border-color: gray;
+	}
+
 	.table-row {
 		border-width: 1px;
 		border-style: solid;
 		border-color: gray;
+		border-bottom-width: 0;
+		display: flex;
+		flex-direction: row;
+	}
+	.subtitle {
+		width: 50%;
+		border-right-width: 1px;
+		border-right-color: gray;
+		border-style: solid;
+		font-weight: bold;
+	}
+	.value {
+		width: 49%;
 	}
 </style>

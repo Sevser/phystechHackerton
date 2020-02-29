@@ -5,7 +5,6 @@
     "slug": "mipt-helper",
     "loading": {
       "hideExponentText": true,
-      "backgroundImage": "./assets/splashscreen.png"
     },
     "orientation": "portrait",
     "primaryColor": "#cccccc",

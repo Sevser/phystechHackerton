@@ -30,10 +30,13 @@
           <text class="student-status-container-label">Статус:</text>
           <text class="student-status-container-value">{{studentStatus}}</text>
         </view>
-        <view>
+        <view class="student-status-container">
           <table :dataToShow="statusTableData"></table>
         </view>
-        <view>
+        <view class="student-status-container">
+          <text class="student-status-container-label">Рабочие учебные программы:</text>
+        </view>
+        <view class="student-status-container">
           <table :dataToShow="NirSection"></table>
         </view>
       </scroll-view>
@@ -55,7 +58,7 @@ export default {
     headerData() {
       return [{
         label: 'Средний балл',
-        value: '4.86',
+        value: '6.86',
       }, {
         label: 'Рейтинг по курсу',
         value: '139',
@@ -140,15 +143,19 @@ export default {
   }
 
   .student-status-container {
-
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
   }
 
   .student-status-container-label {
-
+    padding: 10px 25px;
   }
 
   .student-status-container-value {
     border-color: green;
+    border-width: 1px;
+    color: green;
     padding: 10px 25px;
   }
 

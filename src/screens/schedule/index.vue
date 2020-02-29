@@ -16,8 +16,31 @@
     </nb-header>
 
     <nb-content padder>
-      <nb-text>Content goes here</nb-text>
+      <scroll-view
+          v-if="scheduleReady"
+          :content-container-style="{contentContainer: {paddingVertical: 20}}">
+      </scroll-view>
     </nb-content>
 
   </nb-container>
 </template>
+<script>
+
+export default {
+  name: 'schedule',
+  components: {},
+  props: {},
+  computed: {
+    scheduleReady() {
+      return true;
+    },
+  },
+  methods: {},
+  data() {
+    return {
+      schedule: [{
+      }],
+    };
+  },
+};
+</script>
