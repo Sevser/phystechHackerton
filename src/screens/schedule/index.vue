@@ -17,9 +17,16 @@
 
     <nb-tabs :renderTabBar="getScollableTabComp">
       <nb-tab
+          :key="index"
+          :style="{ paddingTop: 20 }"
           v-for="(scheduleDay, index) in scheduleList"
           :heading="scheduleDay.header">
-        <text>{{scheduleDay.header}}</text>
+        <classDisplay
+            :item="classes"
+            :key="index2"
+            v-for="(classes,index2) in scheduleDay.classes">
+
+        </classDisplay>
       </nb-tab>
     </nb-tabs>
 
@@ -28,10 +35,13 @@
 <script>
 import React from "react";
 import { ScrollableTab } from "native-base";
+import classDisplay from './class';
 
 export default {
   name: 'schedule',
-  components: {},
+  components: {
+    classDisplay,
+  },
   props: {},
   computed: {
     scheduleReady() {
