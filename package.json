@@ -1,5 +1,5 @@
 {
-  "name": "kitchenSink-vue-native",
+  "name": "Mipt-hakaton",
   "version": "0.2.0",
   "private": true,
   "devDependencies": {
@@ -28,6 +28,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "expo": "^35.0.0",
     "native-base": "^2.13.8",
     "react": "16.8.3",

@@ -107,6 +107,9 @@ import ListSeparatorScreen from "./screens/list/separatorList";
 import ListThumbnailScreen from "./screens/list/thumbnailList";
 import ListItemSelectedScreen from "./screens/list/selectedListItem";
 
+
+import ScheduleScreen from "./screens/schedule/index";
+
 // import ListSwipeScreen from "./screens/listSwipe";
 // import BasicListSwipeScreen from "./screens/listSwipe/basicListSwipe";
 // import MultiListSwipeScreen from "./screens/listSwipe/multiListSwiper";
@@ -153,6 +156,7 @@ const Drawer = createDrawerNavigator(
   {
     Home: { screen: HomeScreen },
     Anatomy: { screen: AnatomyScreen },
+    Schedule: { screen: ScheduleScreen },
     Actionsheet: { screen: ActionSheetScreen },
     Header: { screen: HeaderScreen },
     Footer: { screen: FooterScreen },

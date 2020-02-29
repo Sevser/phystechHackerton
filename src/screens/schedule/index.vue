@@ -19,12 +19,5 @@
       <nb-text>Content goes here</nb-text>
     </nb-content>
 
-    <nb-footer>
-      <nb-footer-tab>
-        <nb-button active full>
-          <nb-text>Footer</nb-text>
-        </nb-button>
-      </nb-footer-tab>
-    </nb-footer>
   </nb-container>
 </template>
