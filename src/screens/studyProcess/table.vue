@@ -44,6 +44,7 @@ export default {
 		border-color: gray;
 		border-bottom-width: 0;
 		display: flex;
+		padding-left: 5px;
 		flex-direction: row;
 	}
 	.subtitle {
@@ -51,6 +52,7 @@ export default {
 		border-right-width: 1px;
 		border-right-color: gray;
 		border-style: solid;
+		padding-left: 5px;
 		font-weight: bold;
 	}
 	.value {

@@ -125,6 +125,7 @@ export default {
 <style>
 
   .header-content {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
   }

@@ -2,27 +2,21 @@
   <nb-container>
     <status-bar :barStyle="'light-content'"></status-bar>
     <image-background :source="launchScreenBg" class="imageContainer">
-      <view class="logoContainer" :style="stylesObj.logoContainerStyle">
-        <image-background
-          :source="launchscreenLogo"
-          class="logo"
-          :style="stylesObj.logoStyle"
-        />
-      </view>
-      <view class="text-container">
-        <nb-h3 :style="{ marginBottom: 8 }" class="text-color-white"
-          >App To ShowCase</nb-h3
-        >
-        <nb-h3 class="text-color-white">NativeBase Components</nb-h3>
-      </view>
-      <view :style="{ marginBottom: 80 }">
-        <nb-button
-          :style="stylesObj.btnContainer"
-          :onPress="handleLetGoBtnPress"
-        >
-          <nb-text> Lets Go!</nb-text>
-        </nb-button>
-      </view>
+      <nb-grid>
+        <nb-row :size="1">
+          <view class="text-container">
+            <nb-h3 class="text-color-white-header">
+              Личный кабинет МФТИ
+            </nb-h3>
+          </view>
+        </nb-row>
+        <nb-row :size="10">
+          <card
+              :item="cardItem"
+              v-for="(cardItem, index) in newsArray">
+          </card>
+        </nb-row>
+      </nb-grid>
     </image-background>
   </nb-container>
 </template>
@@ -31,12 +25,21 @@
 import { Dimensions, Platform } from "react-native";
 import launchScreenBg from "../../../assets/launchscreen-bg.png";
 import launchscreenLogo from "../../../assets/logo-kitchen-sink.png";
+import card from './card';
 
 export default {
+  components: {
+    card,
+  },
   props: {
     navigation: {
       type: Object
     }
+  },
+  computed: {
+    newsArray() {
+      return [];
+    },
   },
   data() {
     return {
@@ -84,11 +87,16 @@ export default {
 }
 .text-container {
   align-items: center;
-  margin-bottom: 50;
+  margin-bottom: 50px;
+  width: 100%;
   background-color: transparent;
+  position: relative;
 }
-.text-color-white {
+.text-color-white-header {
+  margin-top: 15px;
+  width: 100%;
   color: white;
+  text-align: center;
 }
 .button-container {
   background-color: #6faf98;

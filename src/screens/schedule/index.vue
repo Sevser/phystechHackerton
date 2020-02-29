@@ -228,9 +228,7 @@ export default {
         }],
       }, {
         header: 'Воскресенье',
-        classes: [{
-
-        }],
+        classes: [],
       }];
     },
   },

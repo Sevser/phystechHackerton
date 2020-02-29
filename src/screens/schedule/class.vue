@@ -57,7 +57,7 @@ export default {
 		color: white;
 	}
 	.class-period-separator {
-		height: 50px;
+		height: 20px;
 		border-color: white;
 		border-right-width: 1px;
 		width: 49%;
