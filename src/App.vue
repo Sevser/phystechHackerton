@@ -109,6 +109,7 @@ import ListItemSelectedScreen from "./screens/list/selectedListItem";
 
 
 import ScheduleScreen from "./screens/schedule/index";
+import StudyProcessScreen from "./screens/studyProcess/index";
 
 // import ListSwipeScreen from "./screens/listSwipe";
 // import BasicListSwipeScreen from "./screens/listSwipe/basicListSwipe";
@@ -157,6 +158,7 @@ const Drawer = createDrawerNavigator(
     Home: { screen: HomeScreen },
     Anatomy: { screen: AnatomyScreen },
     Schedule: { screen: ScheduleScreen },
+    StudyProcess: { screen: StudyProcessScreen },
     Actionsheet: { screen: ActionSheetScreen },
     Header: { screen: HeaderScreen },
     Footer: { screen: FooterScreen },

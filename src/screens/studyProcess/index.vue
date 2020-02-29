@@ -10,7 +10,7 @@
         </nb-button>
       </nb-left>
       <nb-body>
-        <nb-title>Расписание</nb-title>
+        <nb-title>Учебный процесс</nb-title>
       </nb-body>
       <nb-right />
     </nb-header>

@@ -3,7 +3,7 @@
     <app-loading v-if="!isAppReady || authRequest"> </app-loading>
     <app v-if="isAppReady && isAuth"></app>
     <login :onLogin="handleLogin" v-if="isAppReady && !isAuth"></login>
-    <text>{{error}}</text>
+    <nb-spinner class="loadSpinner" v-if="authRequest" color="blue" />
   </view>
 </template>
 
@@ -17,6 +17,7 @@ import axios from 'axios';
 import { Toast } from "native-base";
 
 import { bus } from "../event bus";
+import config from '../config'
 import App from "../App.vue";
 
 // registering all native-base components to the global scope of the Vue
@@ -30,6 +31,7 @@ export default {
       token: '',
       authRequest: false,
       error: '',
+      config,
     };
   },
   computed: {
@@ -42,12 +44,16 @@ export default {
   },
   mounted() {
     bus.$on('login', this.handleLogin);
+    bus.$on('logout', this.handleLogout);
   },
   methods: {
+    handleLogout() {
+      this.token = '';
+    },
     async handleLogin(loginParams) {
       this.authRequest = true;
       try {
-        const authResult = await axios.get('http://virtserver.swaggerhub.com/SlavikMIPT/PhystechHack/1.0.0/inventory');
+        const authResult = await axios.get(`${config.url}/inventory`);
         this.error = authResult.data;
         this.token = authResult.data;
       } catch (error) {
@@ -78,4 +84,11 @@ export default {
 .container {
   flex: 1;
 }
+  .loadSpinner{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 </style>

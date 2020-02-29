@@ -52,6 +52,7 @@
 import { Dimensions, Platform } from "react-native";
 import drawerCover from "../../../assets/drawer-cover.png";
 import drawerImage from "../../../assets/logo-kitchen-sink.png";
+import { bus } from '../../event bus';
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -83,8 +84,14 @@ export default {
       },
       datas: [
         {
-          name: "Schedule",
+          name: "Расписание",
           route: "Schedule",
+          icon: "phone-portrait",
+          bg: "#C5F442"
+        },
+        {
+          name: "Учебный процесс",
+          route: "StudyProcess",
           icon: "phone-portrait",
           bg: "#C5F442"
         },
@@ -245,13 +252,23 @@ export default {
           route: "NHTypography",
           icon: "paper",
           bg: "#48525D"
+        },
+        {
+          name: "Выйти из системы",
+          route: "logout",
+          icon: "paper",
+          bg: "#48525D"
         }
       ]
     };
   },
   methods: {
     handleListItemClick(dataObj) {
-      this.navigation.navigate(dataObj.route);
+      if (dataObj.route === 'logout') {
+        bus.$emit('logout');
+      } else {
+        this.navigation.navigate(dataObj.route);
+      }
     }
   }
 };
