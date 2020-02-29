@@ -84,6 +84,12 @@ export default {
       },
       datas: [
         {
+          name: "Главная",
+          route: "Home",
+          icon: "phone-portrait",
+          bg: "#C5F442"
+        },
+        {
           name: "Расписание",
           route: "Schedule",
           icon: "phone-portrait",

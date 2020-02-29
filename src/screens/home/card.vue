@@ -12,11 +12,11 @@
 		<nb-card-item>
 			<nb-body>
 				<image
-						:url="cardItem.url"
+						:source="{ uri: cardItem.img }"
+						:style="stylesObj.cardItemImage"
 						class="card-item-image"
 				/>
-				<nb-text>{{cardItem.description}}</nb-text
-				>
+				<nb-text>{{cardItem.desc}}</nb-text>
 			</nb-body>
 		</nb-card-item>
 
@@ -32,7 +32,9 @@
 </template>
 
 <script>
+import { Dimensions } from "react-native";
 
+const deviceWidth = Dimensions.get("window").width;
 export default {
   name: 'card',
   components: {},
@@ -42,7 +44,14 @@ export default {
   computed: {},
   methods: {},
   data() {
-    return {};
+    return {
+      stylesObj: {
+        cardItemImage: {
+          resizeMode: "cover",
+          width: deviceWidth / 1.18
+        }
+      },
+    };
   },
 };
 </script>

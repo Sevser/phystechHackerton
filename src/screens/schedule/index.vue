@@ -21,12 +21,14 @@
           :style="{ paddingTop: 20 }"
           v-for="(scheduleDay, index) in scheduleList"
           :heading="scheduleDay.header">
-        <classDisplay
-            :item="classes"
-            :key="index2"
-            v-for="(classes,index2) in scheduleDay.classes">
 
-        </classDisplay>
+        <scroll-view :content-container-style="{contentContainer: {paddingVertical: 20}}">
+          <classDisplay
+              :item="classes"
+              :key="index2"
+              v-for="(classes,index2) in scheduleDay.classes">
+          </classDisplay>
+        </scroll-view>
       </nb-tab>
     </nb-tabs>
 
